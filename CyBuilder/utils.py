@@ -87,6 +87,7 @@ def copy_non_python_files(project_root: Path, dist_dir: Path, show_progress: boo
         ".toml", ".md", ".txt", ".json", ".yaml", ".yml",
         ".bat", ".cfg", ".ini",
         ".png", ".jpg", ".jpeg", ".gif", ".bmp", ".svg", ".ico", ".webp",
+        ".pyd", ".so",
     ]
     exclude_dirs = ["dist", "build", "build_temp", ".venv", "__pycache__", ".git", "tests"]
     exclude_files = {".CyBuilder_cache.json", ".CyBuilder.toml"}

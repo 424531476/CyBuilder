@@ -10,7 +10,7 @@ from CyBuilder.config import (
     normalize_entry_files,
 )
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 __all__ = ["main", "compile_to_pyd", "load_config_file", "merge_config_with_args", "normalize_entry_files"]
 
 

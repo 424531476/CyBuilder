@@ -4,13 +4,35 @@ build-backend = "hatchling.build"
 
 [project]
 name = "CyBuilder"
-version = "0.1.0"
-description = "python项目编译器 - 将 .py 文件编译为 .pyd 文件"
+version = "0.1.1"
+description = "Python项目编译器 - 将 .py 文件编译为 .pyd/.so 二进制文件，保护源代码并提升执行性能"
 readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}
 authors = [
-    {name = "Your Name", email = "your.email@example.com"},
+    {name = "CyBuilder Contributors"},
+]
+maintainers = [
+    {name = "CyBuilder Team"},
+]
+keywords = ["cython", "compiler", "pyd", "obfuscation", "performance", "build-tool"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Software Development :: Compilers",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS",
 ]
 dependencies = [
     "tqdm>=4.66.0",
@@ -19,29 +41,30 @@ dependencies = [
 [project.scripts]
 CyBuilder = "CyBuilder:main"
 
-[tool.hatch.build.targets.wheel]
-packages = ["CyBuilder"]
-
-# 排除不需要打包的目录和文件
-[tool.hatch.build]
-exclude = [
-    "build_temp/",
-    "build/",
-    "dist/",
-    "dist_test/",
-    ".venv/",
-    ".vscode/",
-    "*.pyc",
-    "__pycache__/",
-    "*.pyd",
-    ".CyBuilder_cache.json",
+[project.optional-dependencies]
+dev = [
+    "cython>=3.2.4",
+    "setuptools>=75.3.4",
+    "pytest>=8.0.0",
 ]
+
+[project.urls]
+Homepage = "https://github.com/424531476/CyBuilder"
+Documentation = "https://github.com/424531476/CyBuilder#readme"
+Repository = "https://github.com/424531476/CyBuilder"
+Issues = "https://github.com/424531476/CyBuilder/issues"
 
 [dependency-groups]
 dev = [
     "cython>=3.2.4",
     "setuptools>=75.3.4",
     "pytest>=8.0.0",
+]
+
+# 构建和发布工具
+build = [
+    "build>=1.0.0",
+    "twine>=5.0.0",
 ]
 
 [tool.pytest.ini_options]
