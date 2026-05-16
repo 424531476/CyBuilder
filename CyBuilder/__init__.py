@@ -10,6 +10,7 @@ from CyBuilder.config import (
     normalize_entry_files,
 )
 
+__version__ = "0.1.0"
 __all__ = ["main", "compile_to_pyd", "load_config_file", "merge_config_with_args", "normalize_entry_files"]
 
 
@@ -30,7 +31,15 @@ def main():
   python -m CyBuilder --no-incremental           # 强制全量编译
   python -m CyBuilder --no-progress              # 禁用进度条（适用于 CI/CD）
   python -m CyBuilder --show-config              # 显示当前生效的配置
+  python -m CyBuilder --version                  # 显示版本号
         """
+    )
+
+    parser.add_argument(
+        "-V", "--version",
+        action="version",
+        version=f"CyBuilder {__version__}",
+        help="显示版本号"
     )
 
     parser.add_argument(

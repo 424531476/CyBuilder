@@ -58,6 +58,9 @@ CyBuilder --no-progress
 
 # 查看当前生效的配置
 CyBuilder --show-config
+
+# 显示版本号
+CyBuilder --version
 ```
 
 也可以作为 Python 模块运行：
@@ -81,6 +84,7 @@ python -m CyBuilder
 | `--no-incremental` | - | 禁用增量编译 | - |
 | `--no-progress` | - | 禁用进度条 | - |
 | `--show-config` | - | 显示当前配置并退出 | - |
+| `--version` | `-V` | 显示版本号并退出 | - |
 
 ## 配置文件
 
