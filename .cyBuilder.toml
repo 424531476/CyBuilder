@@ -1,0 +1,30 @@
+# CyBuilder 配置文件示例
+
+[build]
+# 输出目录
+output = "dist"
+
+# 入口文件（支持字符串或数组）
+entry = "main.py"
+# entry = ["main.py", "cli.py"]
+
+# 编译选项
+boundscheck = true
+wraparound = true
+
+# 并行编译工作进程数（不设置 = 自动检测 CPU 核心数）
+# jobs = 4
+
+# 增量编译（基于文件哈希，只编译变化的文件）
+incremental = true
+
+# 排除的文件/目录（glob 模式）
+exclude = [
+    "tests/",
+    "examples/",
+    "docs/",
+]
+
+[display]
+# 显示进度条
+progress = true
